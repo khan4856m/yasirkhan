@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yasir Shafi Khan – Profile</title>
+  <style>
+    :root {
+      --grad1: #ee7752;
+      --grad2: #e73c7e;
+      --grad3: #23a6d5;
+      --grad4: #23d5ab;
+      --anim-speed: 15s;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Segoe UI', sans-serif; background:#f0f4f8; color:#333; line-height:1.6; min-height:100vh; display:flex; flex-direction:column; }
+    a { color:inherit; text-decoration:none; }
+
+    /* Animated Gradient Navbar */
+    nav {
+      background: linear-gradient(-45deg, var(--grad1), var(--grad2), var(--grad3), var(--grad4));
+      background-size: 400% 400%;
+      animation: gradientMove var(--anim-speed) ease infinite;
+      position: sticky; top:0; z-index:100;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem;
+      color:#fff;
+    }
+    @keyframes gradientMove {
+      0% { background-position:0% 50%; }
+      50% { background-position:100% 50%; }
+      100% { background-position:0% 50%; }
+    }
+
+    .logo { font-size:1.5rem; font-weight:bold; }
+    .menu { display:flex; gap:1rem; }
+    .menu a { padding:0.5rem; font-weight:500; position:relative; }
+    .menu a::after {
+      content:''; position:absolute; bottom:-5px; left:50%; width:0; height:3px;
+      background:#fff; transition:width .3s ease, left .3s ease;
+    }
+    .menu a:hover::after {
+      width:100%; left:0;
+    }
+
+    .hamburger {
+      display:none; background:none; border:none; font-size:1.5rem; color:#fff;
+    }
+
+    main {
+      flex:1; display:grid; grid-template-columns:1fr; gap:2rem;
+      max-width:900px; margin:2rem auto; padding:0 1rem;
+    }
+    .profile-img-wrapper {
+      display:flex; justify-content:center;
+    }
+    .profile-img-wrapper img {
+      width:200px; height:200px; border-radius:50%; border:5px solid #fff;
+      object-fit:cover;
+      background:linear-gradient(90deg, #0062ff, #da61ff);
+      background-size:400% 400%; animation: gradientMove 5s ease infinite;
+    }
+
+    section { background:#fff; border-radius:8px; padding:1.5rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    h1 { font-size:2rem; margin-bottom:0.5rem; }
+    ul { padding-left:1.2rem; }
+
+    footer { text-align:center; padding:1rem; color:#555; font-size:0.9rem; }
+
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .menu { display:none; flex-direction:column; background:rgba(0,0,0,0.2); position:absolute; top:100%; right:0; width:200px; }
+      .menu.show { display:flex; }
+      main { margin-top:2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Yasir</div>
+    <button class="hamburger" aria-label="Toggle menu">☰</button>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      
+    </div>
+  </nav>
+
+  <main>
+    <div class="profile-img-wrapper">
+      <img src="Screenshot_2025-08-10-11-02-06-66_99c04817c0de5652397fc8b56c3b3817.jpg" alt="Yasir Shafi Khan" loading="lazy" />
+    </div>
+    <section id="about">
+      <h1>About Me</h1>
+      <p> 
+      Hi, I'm Yasir Shafi Khan
+
+Greetings from the serene village of Dardapora in Kashmir! I'm an aspiring software engineer with a deep passion for technology and innovation. Currently, I'm pursuing a Bachelor of Computer Applications (BCA) at Government Degree College Baramulla, where I am honing my skills in programming, problem-solving, and software development.
+
+Growing up in Dardapora, a picturesque village surrounded by the majestic mountains of Kashmir, I developed an early fascination with computers and their potential to transform lives. This curiosity led me to explore various facets of technology, from building simple applications to delving into complex coding challenges.
+
+At GDC Baramulla, I've been actively involved in coding competitions and workshops that foster creativity and technical prowess. These experiences have not only sharpened my coding skills but also instilled in me a collaborative spirit and a drive for continuous learning.
+
+Beyond academics, I am deeply interested in areas like DevOps, networking, and cloud computing. I believe that understanding the intricacies of these domains is crucial for developing scalable and efficient software solutions.
+
+In my free time, I enjoy photography, capturing the breathtaking landscapes of Kashmir, and reading about the latest trends in technology. I also have a keen interest in painting, which allows me to express my creativity and unwind from the rigors of academic life.
+
+Looking ahead, I aspire to contribute to the tech industry by developing innovative software solutions that address real-world problems. I am excited about the opportunities that lie ahead and am committed to making a meaningful impact through technology.
+
+
+        
+        
+        
+      
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <!-- Future images -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">yk477416@gmail.com</a></p>
+    </section>
+    <section><h2>Programming</h2></section>
+  </main>
+
+  <footer>&copy; 2025 Yasir Shafi Khan — Crafted with ❤️</footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.menu').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
