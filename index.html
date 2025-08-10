@@ -4,6 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yasir Shafi Khan – Profile</title>
+  <script>
+  // Toggle mobile menu
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.menu').classList.toggle('show');
+  });
+
+  // Handle upload form submission
+  document.getElementById('upload-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const fileInput = document.getElementById('problem-upload');
+    if (fileInput.files.length === 0) {
+      alert("Please select a file to upload.");
+    } else {
+      const fileName = fileInput.files[0].name;
+      alert(`"${fileName}" uploaded successfully (simulation only).`);
+      fileInput.value = ''; // reset input
+    }
+  });
+
+  // Handle notification opt-in checkbox
+  document.getElementById('notify-optin').addEventListener('change', function () {
+    if (this.checked) {
+      alert("You've subscribed to notifications (simulation only).");
+    } else {
+      alert("You've unsubscribed from notifications.");
+    }
+  });
+</script>
+
   <style>
     :root {
       --grad1: #ee7752;
@@ -138,3 +167,4 @@ Looking ahead, I aspire to contribute to the tech industry by developing innovat
   </script>
 </body>
 </html>
+
